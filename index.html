@@ -13,64 +13,256 @@
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@sberdevices/assistant-client@3.3.1/umd/assistant.min.js"></script>
 </head>
+<link rel="stylesheet" href="https://cdn-app.sberdevices.ru/shared-static/0.0.0/styles/SBSansText.0.1.0.css">
 <style>
-body{
-    background-color: #1A1A1A;
-    color: #ffffff;
-}
-div#command{
-    width: 90vw;
-    overflow: auto;
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid red;
-    color: white;
-}
+    :root {
 
-ul {
-    font-size: 14px;
-    color: #ffffff;
-    padding: 0;
-    margin: 0;
-}
-ul li {
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    border: 2px solid white;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-}
-ul li.onFocus{
-    border-color: #9ecd09;
-}
-ul li:active {
-    border: 2px solid #ff9900;
-}
-ul li.select {
-    background-color: #ffffff;
-}
-ul li.win {
-    background-color: #9ecd09;
-    color: #9ecd09;
-}
+        --plasma-colors-text: #FFFFFF;
+        --plasma-colors-primary: #FFFFFF;
+        --plasma-colors-secondary: rgba(255,255,255,0.56);
+        --plasma-colors-tertiary: rgba(255,255,255,0.28);
+        --plasma-colors-background: #080808;
+        --plasma-colors-background-primary: #1A1A1A;
+        --plasma-colors-background-secondary: #333333;
+        --plasma-colors-background-tertiary: #525252;
+        --plasma-colors-warning: #EF6B25;
+        --plasma-colors-critical: #DC283A;
+        --plasma-colors-overlay: rgba(0,0,0,0.8);
+        --plasma-colors-surface-liquid01: rgba(255,255,255,0.06);
+        --plasma-colors-surface-liquid02: rgba(255,255,255,0.12);
+        --plasma-colors-surface-liquid03: rgba(255,255,255,0.12);
+        --plasma-colors-surface-card: rgba(255,255,255,0.12);
+        --plasma-colors-button-primary: #FFFFFF;
+        --plasma-colors-button-secondary: rgba(255,255,255,0.12);
+        --plasma-colors-button-warning: #EF6B25;
+        --plasma-colors-button-critical: #DC283A;
+        --plasma-colors-button-checked: #FFFFFF;
+        --plasma-colors-speech-bubble-sent: rgba(0,0,0,0.28);
+        --plasma-colors-speech-bubble-received: rgba(255,255,255,0.12);
+        --plasma-colors-accent: #2AC673;
+        --plasma-colors-button-accent: #12A557;
+        --plasma-colors-button-focused: #2AC673;
+        --plasma-colors-gradient: linear-gradient(336.84deg,rgba(20,116,70,0.6) 0%,rgba(8,8,8,0) 64.88%),radial-gradient(100% 100% at 75.89% 100%,rgba(0,133,255,0.24) 0%,rgba(0,71,255,0.03) 100%),linear-gradient(180deg,rgba(8,8,8,0) 50%,rgba(7,71,33,0.3) 100%),linear-gradient(270deg,#061621 0%,rgba(8,8,8,0) 100%);
+        color: rgb(255, 255, 255);
+        /* background-color: rgb(8, 8, 8); */
+
+        --plasma-typo-display1-font-size: 192px;
+        --plasma-typo-display1-line-height: 192px;
+        --plasma-typo-display2-font-size: 120px;
+        --plasma-typo-display2-line-height: 128px;
+        --plasma-typo-display3-font-size: 96px;
+        --plasma-typo-display3-line-height: 104px;
+        --plasma-typo-headline1-font-size: 64px;
+        --plasma-typo-headline1-line-height: 72px;
+        --plasma-typo-headline2-font-size: 48px;
+        --plasma-typo-headline2-line-height: 56px;
+        --plasma-typo-headline3-font-size: 40px;
+        --plasma-typo-headline3-line-height: 48px;
+        --plasma-typo-headline4-font-size: 40px;
+        --plasma-typo-headline4-line-height: 48px;
+        --plasma-typo-body1-font-size: 32px;
+        --plasma-typo-body1-line-height: 40px;
+        --plasma-typo-body2-font-size: 32px;
+        --plasma-typo-body2-line-height: 40px;
+        --plasma-typo-body3-font-size: 32px;
+        --plasma-typo-body3-line-height: 40px;
+        --plasma-typo-paragraph1-font-size: 32px;
+        --plasma-typo-paragraph1-line-height: 44px;
+        --plasma-typo-paragraph2-font-size: 32px;
+        --plasma-typo-paragraph2-line-height: 44px;
+        --plasma-typo-footnote1-font-size: 28px;
+        --plasma-typo-footnote1-line-height: 36px;
+        --plasma-typo-footnote2-font-size: 28px;
+        --plasma-typo-footnote2-line-height: 36px;
+        --plasma-typo-button1-font-size: 32px;
+        --plasma-typo-button1-line-height: 40px;
+        --plasma-typo-button2-font-size: 28px;
+        --plasma-typo-button2-line-height: 32px;
+        --plasma-typo-caption-font-size: 24px;
+        --plasma-typo-caption-line-height: 32px;
+        --plasma-typo-underline-font-size: 20px;
+        --plasma-typo-underline-line-height: 24px;
+    }
+
+
+
+    body{
+        font-family: 'SB Sans Text', Helvetica, Arial, sans-serif;
+
+        background-color: #1A1A1A;
+        background-image: url('trees.png');
+        color: #ffffff;
+    }
+
+    .song {
+        font-size: 40px;
+        color: rgb(36 178 62);
+    }
+
+    div#command{
+        width: 90vw;
+        overflow: auto;
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid red;
+        color: black;
+    }
+
+
+    .hXQgjp {
+        box-sizing: border-box;
+        width: 1236px;
+    }
+
+    .hvJMgY.onFocus {
+        border-color: #9ecd09;
+        border: 10px solid #12A557;
+    }
+
+    .ehQSey {
+        /*float:left;
+        margin-right:10px;
+        margin-left:10px;*/
+        position: relative;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: row;
+        flex-shrink: 0;
+        border-radius: 40px;
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 48px;
+        will-change: background-color, transform;
+        transition: transform 0.4s ease-in-out 0s;
+    }
+
+
+
+    .hvJMgY {
+        margin: 20px;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        flex: 1 1 0%;
+        flex-direction: column;
+        box-sizing: content-box;
+        width: 100%;
+        border-radius: 40px;
+    }
+
+    .hRBsWH {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        height: 392px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .jYxGEJ {
+        top: 8px;
+        left: 8px;
+        box-sizing: border-box;
+    }
+
+    .hGDBie {
+        position: absolute;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 64px;
+        height: 64px;
+        font-size: 28px;
+        font-weight: 600;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.56);
+        border-radius: 50%;
+        background-color: var(--plasma-colors-black-secondary,rgba(8,8,8,0.56));
+    }
+
+
+    .BNtsP {
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .jxgYyd {
+        position: relative;
+        box-sizing: border-box;
+        padding: 32px;
+        background-color: rgb(36 178 62);
+    }
+
+    .gBRvuC {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        box-sizing: border-box;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 40px;
+        white-space: normal;
+        color: rgb(255, 255, 255);
+        -webkit-line-clamp: 2;
+    }
 
 </style>
 
 <body>
-<div id="command">Debug: Тут выводится всё что приходит от платформы. Ожидаем данных...</div>
-<h1>Игра колпачки v2.0</h1>
-<center>
-    <ul id="container">
-    <li id="cap-1" data-number="Один">Один</li>
-    <li id="cap-2" data-number="Два">Два</li>
-    <li id="cap-3" data-number="Три">Три</li>
-    </ul>
-    <div id="current-number"></div>
-</center>
+    <div id="command">Debug: Тут выводится всё что приходит от платформы. Ожидаем данных...</div>
 
-<script type="text/javascript">
+
+    <div id="root">
+        <center>
+            <div tabindex="0" class="ehQSey hXQgjp " id="container">
+                <div class="hvJMgY" data-number="1">
+                    <div class="hRBsWH" style="background-image: url('001.jpeg'); opacity: 1;"></div>
+                    <div color="index" class="hGDBie jYxGEJ">1</div>
+                    <div class="jxgYyd BNtsP">
+                        <div class="gBRvuC">Детские новогодние песни</div>
+                    </div>
+                </div>
+                <div class="hvJMgY" data-number="2">
+                    <div class="hRBsWH" style="background-image: url('003.jpeg'); opacity: 1;"></div>
+                    <div color="index" class="hGDBie jYxGEJ">2</div>
+                    <div class="jxgYyd BNtsP">
+                        <div class="gBRvuC">Взрослые новогодние песни</div>
+                    </div>
+                </div>
+                <div class="hvJMgY" data-number="3">
+                    <div class="hRBsWH" style="background-image: url('004.jpeg'); opacity: 1;"></div>
+                    <div color="index" class="hGDBie jYxGEJ">3</div>
+                    <div class="jxgYyd BNtsP">
+                        <div class="gBRvuC">Все сразу</div>
+                    </div>
+                </div>
+
+            </div>
+        </center>
+    </div>
+
+
+    <center>
+        <div class="song" hidden>
+            <p>
+                В лесу родилась <b>ёлочка</b>,<br/>
+                В лесу она <b>росла</b>.<br/>
+                Зимой и <b>летом</b> стройная,<br/>
+                <b>Зелёная</b> была.<br/>
+                Метель ей <b>пела</b> песенку:<br/>
+                «Спи, ёлочка, <b>бай-бай</b>!»<br/>
+                <b>Мороз</b> снежком укутывал:<br/>
+                «Смотри, <b>не замерзай</b>!»<br/>
+            </p>
+        </div>
+    </center>
+
+    <script type="text/javascript">
     /*
     Локальное тестирование в браузере на вашем компьютере
     Для отладки эту страницу нужно открывать с параметром devel. Пример:
@@ -78,73 +270,74 @@ ul li.win {
 
     Необходимо вставить значения переменных token и initPhrase (они чуть ниже)
     */
-    var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGQ1MDgwMzU1ODQ3YzhkNmZjNGY3ZDVmOWMxMzRkOGYwNDAwNjEyZmJiZTQ3ZjEyNzU1ODAwODRjODhlZmM4NDY4ZDU4YzQ3OTU3ZmEzYyIsImF1ZCI6IlZQUyIsImV4cCI6MTYzNTQ1Mjc1NCwiaWF0IjoxNjM1MzY2MzQ0LCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiMTAxOTBiZTAtNzAyZi00MzI3LWI5ODYtMDI3N2RhMGNjZGUwIiwic2lkIjoiMjQ0YmFiZDQtNjc1Yy00YjJmLTkzMjYtMTczNjQyOTEwNmJkIn0.NfxEXsC-BQ5seCxUHc9DNXxBARq5IqmomWfeiagBajVVexafo15aeA6mHOfFjJuooJdKEHKPU6HduSG3NO33XcA_aX-jVGckeAP12Ghl-vccHoeFPVXOXfVEjRbPXi4XZouIj7KVnLGir0dQ9SlyBZeIahwXFkn6BV4a0sIYLbSwirJJoTxCBIV2JSmUMfNI77bnUU_i96fxIf8YMmuSlcOPYjTdtzYzzwIB5RdirMOmNp9waG5B6HZPjZ2OlltJr_PY-JIE2sKgSMYpao0JgxZkMpjzgbAcvwFISXR7wEl3NgDdF46jiw-niHxlXM2NkDhP7qYAPIhBujLHHrb8KyooNZ4J7pmdYwU76Zpip-OOrEb7NwkYnOclkUzatAlBrgOl-1BhhnQLHYq2D9TsBuFW8vz1b_cDL866fDzbY_Wx2g6991OTo57ctiQqkrve9nW-MzLK0iv8d-xVtzWXd9OpprP_heigD3ykvB9d6NC90oUJdUiwnL0YjOs9OywzEDOho4vaYt3kFJ2RDMYyIz_um72QuroY2YHv1-x_rXxm1mWRUDZl21TMsgevrfOfr62-gXBp4El891dMxtWh0Pn2uNQYCZwyZQ1h6J0rQ96Kol31F5dSVl8C-GS2_5rTbJDdiZVNOLLzHntQcWdZT1fmyI_T73qtwX41b0tWPUk'; // <- сюда вставляем токен из smartapp-studio (https://developer.sberdevices.ru/docs/ru/developer_tools/sdk/overview)
-    var initPhrase = 'запусти угадай песню'; // <- сюда вставляем активационную фразу для хапуска вашего canvas app
+    var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGQ1MDgwMzU1ODQ3YzhkNmZjNGY3ZDVmOWMxMzRkOGYwNDAwNjEyZmJiZTQ3ZjEyNzU1ODAwODRjODhlZmM4NDY4ZDU4YzQ3OTU3ZmEzYyIsImF1ZCI6IlZQUyIsImV4cCI6MTYzNjU3NDI4NiwiaWF0IjoxNjM2NDg3ODc2LCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiM2RhNTA2OWQtY2Q4Zi00MWM4LWFmZmUtY2MzZDgzYjMxMWNiIiwic2lkIjoiY2Q3MWIzYjctNDFlMy00MGMxLThmMjktMWE5N2QzNzFkM2U5In0.gKwtiPr5bgglDHtl10pIG7oLZ6nv7K0jof91_A9Ac_ClTKlwKimqRBG9oxTY0rMJ8i7rzZbnFCvJhra-JCV6FdJoUKH3TzunGiJymp8mDMf3JJUa_AAOcZITvfYgnZHALapYBdNCqE9ShZ206rOK-SSxT3Z39yPlffAEl7Y94XePmlFXq-opHdJHeNq4cETw4fHsUILxnk8PMt5hG1s4w7msq4IcslKKQvc8KgSMJ86D48Zjo2ZafYpYy_25qdq_CefIQny8PNjOrCGupth5ycLjn-AfIkugHlRkb7hs2UqtcKdSWXwmRwcUsvYWMVTefXBCNyYkXgwm0ZQFlWlBTGIaiJg--MfBuKotcCLpe0U8TPkY2IohLz00xcrd4OlfkdAwbAmnw6Np24UAzPJeoTnWS3ugA9x6ljVniFBVo_jddiKN7O-26HFlMf07KY9tbl4MeN_b2LBb6WFsB7DuQmJRmB2dsNmBclf1O0hqu3l6AX3ZooFtwu0-2jhBOB8uffal0Ze2GnIQbrUTO2rShphV1jAVijxLRKVmvBOxrJ2R5QfYj1iNXMdQ5ikGCSCrdu2ZM69goCWfUKSJU58SZHthE2_7M0RWHqS30-TAcvSVrOdQdPHgZE7gKG1FciFAZBaNPHPoP9NuT_0VTOY3LkUiKEUCYG3BtPor-WMN3TY'; // <- сюда вставляем токен из smartapp-studio (https://developer.sberdevices.ru/docs/ru/developer_tools/sdk/overview)
+    var initPhrase = 'запусти навык угадай песню'; // <- сюда вставляем активационную фразу для хапуска вашего canvas app
     //
 
     //Определяем sberbox это или нет
     var isBox = function(){
-    let nav = window.navigator.userAgent.toLocaleLowerCase();
-    return (/sberbox/.test(nav) || /satellite/.test(nav) || /tv/.test(nav));
+        let nav = window.navigator.userAgent.toLocaleLowerCase();
+        return (/sberbox/.test(nav) || /satellite/.test(nav) || /tv/.test(nav));
     }
 
-    var winNumber = null;
-    function run(text) {
-        var currentNumber = getNumberCap(text);
-        document.querySelectorAll('li').forEach(item => item.className = 'select');
-        if (winNumber === currentNumber) {
-            document.getElementById('current-number').innerHTML = '<h2>Вы выиграли! 👍 </h2>';
-            document.getElementById('cap-' + currentNumber).className = 'win'
-        } else {
-            document.getElementById('current-number').innerHTML = '<h2>Вы проиграли 😞</h2>';
-        }
-    }
+    // var winNumber = null;
+    // function run(text) {
+    //     var currentNumber = getNumberCap(text);
+    //     document.querySelectorAll('li').forEach(item => item.className = 'select');
+    //     if (winNumber === currentNumber) {
+    //         document.getElementById('current-number').innerHTML = '<h2>Вы выиграли! 👍 </h2>';
+    //         document.getElementById('cap-' + currentNumber).className = 'win'
+    //     } else {
+    //         document.getElementById('current-number').innerHTML = '<h2>Вы проиграли 😞</h2>';
+    //     }
+    // }
 
-    function getNumberCap(text) {
-        switch(text) {
-            case 'Один':
-                return 1;
-            case 'Два':
-                return 2;
-            case 'Три':
-                return 3;
-        }
-    }
+    // function getNumberCap(text) {
+    //     switch(text) {
+    //         case 'Один':
+    //             return 1;
+    //         case 'Два':
+    //             return 2;
+    //         case 'Три':
+    //             return 3;
+    //     }
+    // }
 
     //Выделям элемент при перемещении "курсора" пультом Sberbox
     function addfocus(direct){
-    let container = document.getElementById('container');
-    if (!direct){
-        direct = 'right';
-    }
-    if (container){
-        let items = container.children;
-        let focusOn = null;
-        for(let i = 0; i < items.length; i++){
-        if (items[i].classList.contains('onFocus')){
-            focusOn = i;
+        let container = document.getElementById('container');
+        if (!direct){
+            direct = 'right';
         }
-        items[i].className = '';
+        if (container){
+            let items = container.children;
+            let focusOn = null;
+            for(let i = 0; i < items.length; i++){
+                if (items[i].classList.contains('onFocus')){
+                    focusOn = i;
+                }
+                // items[i].className = '';
+                items[i].classList.remove('onFocus');
+            }
+            if (typeof focusOn != "number"){
+                focusOn = 0;
+            }
+            if (direct == "left"){
+                focusOn -= 1;
+            }else{
+                focusOn += 1;
+            }
+            if (typeof items[focusOn] === "undefined"){
+                if (direct == "left") {
+                    focusOn = (items.length - 1);
+                } else {
+                    focusOn = 0;
+                }
+            }
+            if (typeof items[focusOn] !== "undefined"){
+                items[focusOn].classList.add('onFocus');
+            }
         }
-        if (typeof focusOn != "number"){
-        focusOn = 0;
-        }
-        if (direct == "left"){
-        focusOn -= 1;
-        }else{
-        focusOn += 1;
-        }
-        if (typeof items[focusOn] === "undefined"){
-        if (direct == "left"){
-            focusOn = (items.length - 1);
-        }else{
-            focusOn = 0;
-        }
-        }
-        if (typeof items[focusOn] !== "undefined"){
-        items[focusOn].classList.add('onFocus');
-        }
-    }
     }
 
     //Инициируем assistant-client
@@ -154,10 +347,10 @@ ul li.win {
         console.info('Start devel version');
         var ac = assistant.createSmartappDebugger({ getState: () => state, token, initPhrase });
     }else if (url.searchParams.get('devel') === 'local'){
-    var ac = {
-        on: function(){},
-        sendData: function(data){console.log('skip send data',data);}
-    };
+        var ac = {
+            on: function(){},
+            sendData: function(data){console.log('skip send data',data);}
+        };
     }else{
         console.info('Start production version');
         var ac = assistant.createAssistant({ getState: () => state });
@@ -168,41 +361,40 @@ ul li.win {
         console.info('got command',command);
         document.getElementById('command').innerHTML = JSON.stringify(command);
         if (command.type == "smart_app_data"){
-        if (typeof command.action !== "undefined" && typeof command.action.type !== "undefined"){
-        let action = command.action;
-        document.getElementById('command').innerHTML = 'action: ' + JSON.stringify(action);
-            switch(action.type){
+            if (typeof command.action !== "undefined" && typeof command.action.type !== "undefined"){
+                let action = command.action;
+                document.getElementById('command').innerHTML = 'action: ' + JSON.stringify(action);
+                switch(action.type){
                     case 'START':
-                    winNumber = command.action.winNumber;
-                    document.getElementById('current-number').innerHTML = '';
-                    document.querySelectorAll('li').forEach(item => item.className = '');
-                    break;
-                    case 'SELECT_CAP':
-                    select(action.select);
-                    break;
+                        //winNumber = command.action.winNumber;
+                        //document.getElementById('current-number').innerHTML = '';
+                        //document.querySelectorAll('li').forEach(item => item.className = '');
+                        break;
+                        // case 'SELECT_CAP':
+                        // select(action.select);
+                        // break;
                     case 'EXIT':
-                    console.log('Close smartapp');
-                    if (ac && typeof ac.close === "function"){
-                ac.close();
-            }
-                    break;
+                        console.log('Close smartapp');
+                        if (ac && typeof ac.close === "function"){
+                            ac.close();
+                        }
+                        break;
                     default:
-                    console.error('Unsupported action-type', action.type);
-                    break;
+                        console.error('Unsupported action-type', action.type);
+                        break;
+                }
             }
         }
-    }
     }
 
     //Отправляем данные на back
     function select(number) {
-    let SendToBack = {
-            action: {action_id: 'SELECT_CAP', parameters: {select: number, winNumber: winNumber, win: getNumberCap(number) === winNumber}}
-        }
-    console.log('Select',number,SendToBack);
-        run(number);
+        let SendToBack = {
+                action: {action_id: 'SELECT_CAP', parameters: {select: number}}
+            }
+        console.log('Select',number,SendToBack);
+        // run(number);
         var unsubscribe = ac.sendData(SendToBack, (data) => {
-            winNumber = null;
             unsubscribe();
         });
     }
@@ -210,7 +402,7 @@ ul li.win {
     //Принимаем начальные данные от платформы
     ac.on('start', (command) => {
         let initialData = ac.getInitialData();
-        for(let i=0; i < initialData.length; i++){
+        for (let i=0; i < initialData.length; i++) {
             processData(initialData[i]);
         }
     });
@@ -220,55 +412,56 @@ ul li.win {
         processData(command);
     });
 
-document.addEventListener("DOMContentLoaded", function(){
-    //Навешиваем события
-    let caps = document.getElementById('container').children;
-    for(let i = 0; i < caps.length; i++){
-    caps[i].addEventListener(
-        'click',
-        function(e){
-        console.log('click on',this,'=>',this.dataset.number);
-        select(this.dataset.number);
-        },
-        false
-    );
-    }
+    document.addEventListener("DOMContentLoaded", function(){
+        // Навешиваем события
+        let caps = document.getElementById('container').children;
+        for(let i = 0; i < caps.length; i++){
+            caps[i].addEventListener(
+                'click',
+                function(e){
+                    console.log('click on',this,'=>',this.dataset.number);
+                    select(this.dataset.number);
+                },
+                false
+            );
+        }
 
-    //Поддержка пульта sberbox
-    if (isBox()){
-    document.getElementById('container').children[0].classList.add('onFocus');
-    window.addEventListener('keydown', (event) => {
-        if (!winNumber){
-        return;
-        }
-        let key = event.key.toLowerCase().replace(/^arrow/,'');
-        console.log('key event',key);
-        switch(key) {
-        case 'down':
-            // вниз
-             break;
-            case 'up':
-                // вверх
-             break;
-            case 'left':
-             // влево
-             addfocus('left');
-             break;
-            case 'right':
-            // вправо
-            addfocus('right');
-            break;
-            case 'enter':
-             // ок
-            if (typeof document.querySelectorAll('li.onFocus')[0] !== "undefined"){
-                let event = new Event("click");
-            document.querySelectorAll('li.onFocus')[0].dispatchEvent(event);
-        }
-            break;
+        //Поддержка пульта sberbox
+        if (isBox()){
+            document.getElementById('container').children[0].classList.add('onFocus');
+            console.log(document.getElementById('container').children[0]);
+            window.addEventListener('keydown', (event) => {
+                if (!winNumber){
+                    return;
+                }
+                let key = event.key.toLowerCase().replace(/^arrow/,'');
+                console.log('key event',key);
+                switch(key) {
+                    case 'down':
+                        // вниз
+                        break;
+                    case 'up':
+                        // вверх
+                        break;
+                    case 'left':
+                        // влево
+                        addfocus('left');
+                        break;
+                    case 'right':
+                        // вправо
+                        addfocus('right');
+                        break;
+                    case 'enter':
+                        // ок
+                        if (typeof document.querySelectorAll('li.onFocus')[0] !== "undefined"){
+                            let event = new Event("click");
+                            document.querySelectorAll('li.onFocus')[0].dispatchEvent(event);
+                        }
+                        break;
+                }
+            });
         }
     });
-    }
-});
 </script>
 </body>
 </html>

@@ -403,6 +403,7 @@
     ac.on('start', (command) => {
         console.log('start received');
         let initialData = ac.getInitialData();
+        console.log(initialData);
         for (let i=0; i < initialData.length; i++) {
             processData(initialData[i]);
         }

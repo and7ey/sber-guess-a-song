@@ -360,31 +360,31 @@
     var processData = function(command){
         console.info('got command',command);
         document.getElementById('command').innerHTML = JSON.stringify(command);
-        if (command.type == "smart_app_data"){
-            if (typeof command.action !== "undefined" && typeof command.action.type !== "undefined"){
-                let action = command.action;
-                document.getElementById('command').innerHTML = 'action: ' + JSON.stringify(action);
-                switch(action.type){
-                    case 'START':
-                        //winNumber = command.action.winNumber;
-                        //document.getElementById('current-number').innerHTML = '';
-                        //document.querySelectorAll('li').forEach(item => item.className = '');
-                        break;
-                        // case 'SELECT_CAP':
-                        // select(action.select);
-                        // break;
-                    case 'EXIT':
-                        console.log('Close smartapp');
-                        if (ac && typeof ac.close === "function"){
-                            ac.close();
-                        }
-                        break;
-                    default:
-                        console.error('Unsupported action-type', action.type);
-                        break;
-                }
-            }
-        }
+        // if (command.type == "smart_app_data"){
+        //     if (typeof command.action !== "undefined" && typeof command.action.type !== "undefined"){
+        //         let action = command.action;
+        //         document.getElementById('command').innerHTML = 'action: ' + JSON.stringify(action);
+        //         switch(action.type){
+        //             case 'START':
+        //                 //winNumber = command.action.winNumber;
+        //                 //document.getElementById('current-number').innerHTML = '';
+        //                 //document.querySelectorAll('li').forEach(item => item.className = '');
+        //                 break;
+        //                 // case 'SELECT_CAP':
+        //                 // select(action.select);
+        //                 // break;
+        //             case 'EXIT':
+        //                 console.log('Close smartapp');
+        //                 if (ac && typeof ac.close === "function"){
+        //                     ac.close();
+        //                 }
+        //                 break;
+        //             default:
+        //                 console.error('Unsupported action-type', action.type);
+        //                 break;
+        //         }
+        //     }
+        // }
     }
 
     //Отправляем данные на back

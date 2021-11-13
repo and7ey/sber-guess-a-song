@@ -88,16 +88,16 @@
 
     body{
         font-family: 'SB Sans Text', Helvetica, Arial, sans-serif;
-
-        background-color: #1A1A1A;
-        background-image: url('trees.png');
+        background-image: url('trees2.png');
         color: #ffffff;
     }
 
     .song {
-        font-size: 40px;
+        font-size: 36px;
         color: rgb(36 178 62);
     }
+
+
 
     div#command{
         width: 90vw;
@@ -111,7 +111,7 @@
 
     .hXQgjp {
         box-sizing: border-box;
-        width: 1236px;
+        width: 90vw;
     }
 
     .hvJMgY.onFocus {
@@ -125,12 +125,12 @@
         margin-left:10px;*/
         position: relative;
         display: flex;
-        box-sizing: border-box;
+        /*box-sizing: border-box;*/
         flex-direction: row;
         flex-shrink: 0;
         border-radius: 40px;
-        background: rgba(255, 255, 255, 0.06);
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 48px;
+        /*background: rgba(255, 255, 255, 0.06);*/
+        /*box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 48px;*/
         will-change: background-color, transform;
         transition: transform 0.4s ease-in-out 0s;
     }
@@ -154,7 +154,7 @@
         display: block;
         box-sizing: border-box;
         width: 100%;
-        height: 392px;
+        height: 30vw;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -188,13 +188,13 @@
         display: flex;
         box-sizing: border-box;
         flex-direction: column;
-        height: 200px;
+        height: 180px;
     }
 
     .jxgYyd {
         position: relative;
         box-sizing: border-box;
-        padding: 32px;
+        padding: 2vw;
         background-color: rgb(36 178 62);
     }
 
@@ -203,7 +203,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         box-sizing: border-box;
-        font-size: 32px;
+        font-size: 2vw;
         font-weight: 500;
         line-height: 40px;
         white-space: normal;
@@ -219,7 +219,7 @@
 
     <div id="root">
         <center>
-            <div tabindex="0" class="ehQSey hXQgjp " id="container">
+            <div tabindex="0" class="ehQSey hXQgjp" id="container">
                 <div class="hvJMgY" data-number="1">
                     <div class="hRBsWH" style="background-image: url('001.jpeg'); opacity: 1;"></div>
                     <div color="index" class="hGDBie jYxGEJ">1</div>
@@ -248,8 +248,8 @@
 
 
     <center>
-        <div class="song" hidden>
-            <p>
+        <div class="song" id="song" hidden>
+            <p id="songText" class="songText">
                 В лесу родилась <b>ёлочка</b>,<br/>
                 В лесу она <b>росла</b>.<br/>
                 Зимой и <b>летом</b> стройная,<br/>
@@ -270,7 +270,7 @@
 
     Необходимо вставить значения переменных token и initPhrase (они чуть ниже)
     */
-    var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGQ1MDgwMzU1ODQ3YzhkNmZjNGY3ZDVmOWMxMzRkOGYwNDAwNjEyZmJiZTQ3ZjEyNzU1ODAwODRjODhlZmM4NDY4ZDU4YzQ3OTU3ZmEzYyIsImF1ZCI6IlZQUyIsImV4cCI6MTYzNjY2MTg3MSwiaWF0IjoxNjM2NTc1NDYxLCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiM2Q1ODkwMWMtMTFiNy00NGY5LTk4NTItNjE4ZDY4YTk2Y2M2Iiwic2lkIjoiZjVkZGU3YjgtZTU1Yy00ZTRlLThiZDktMWFkNTc4YTMxNzdjIn0.RwlMIhmAOW9NoOz2ml8ZD4Kqz2SKFYcFRVInWgpNzE1cctXJaTfwWxAOTEN5O5VGnRTMA8v8Ut3x6UsHbZWNejvsW8Eo4KDytEAB7epQzUhXwVoFOdcYl3tREzQ9YOo5H-wQzXKbKqctfBKDoprkgeW65cYPtgnUCtjqnYKz-hgT_pJST6P0M1nZzrCkSVNOQJ07U9_yUQtl_3SpCmk1ZhaytDBPHQOAyr7CfoYaJwzq40TWEmPvDs1IsXifwQO9G8m4KuslBJHVOgZGfACuWaoscz8L0AGWQK80-jk5B2Cl4sFA8TiiPi2-efSVXu9QelaA7b3_B3f9VJ_D92OzYyhBNK5zpBDOZhVSBy21-8FVVz1Bk0FPON-dKUbYV7HxbzAK27NGWEkbQxAKb7aYGsjUx39RvjdxzZ5wpBwEacyMPaFMkVwzkYkecc-1DWdF81yh7zQoGHrAiUa8gYKHokwGwVEcJ3cyHnwsRbIScpsj-c-VqykJY3KTLZf99_Hwk4TmnfKiez7pmXNlZuPKipUWIDMp7Ka4XpMGGY7dD61dNM_CKaJygker7a9lSSe_305qs0dWfnSu3KRcyI7x51BpQYe3yRrLcf1zqpjfrd2BxKm6JDW677NoNx8cUEJkdZv4tdy5_2in83-t1VpKir4I1B1GuoE_XPL8MMiC58k'; // <- сюда вставляем токен из smartapp-studio (https://developer.sberdevices.ru/docs/ru/developer_tools/sdk/overview)
+    var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGQ1MDgwMzU1ODQ3YzhkNmZjNGY3ZDVmOWMxMzRkOGYwNDAwNjEyZmJiZTQ3ZjEyNzU1ODAwODRjODhlZmM4NDY4ZDU4YzQ3OTU3ZmEzYyIsImF1ZCI6IlZQUyIsImV4cCI6MTYzNjgzNTU3NiwiaWF0IjoxNjM2NzQ5MTY2LCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiMGIwMmEwMmQtZjllMS00ZTY5LWEzOTEtYzI0YThlYTJlZWU4Iiwic2lkIjoiYjM3NDViNWYtOTYyZi00YWIzLWFiZmUtZGZiNzUxZTlhOGZlIn0.eLVVdsvtIGmbXirOaLvdE3dk5XQ2ow1lUSKTaGT3VkMUGozRKPKKnfqeU8dgjV2nplWrURIXGzPe4FXr0tIV9m8i7z6Vu4V3WVbSY9qJ-qyBQK--ZHVJZ_Knj48SPSlHrWlfxBoMeljSud_0Eoh1taKCP7stSEKfQQGBJxrtjv23iqbRzN7E9ECU7lsero_VzhUitdLH1kicQQU3nsxpU9eMECOIiuxAn92Ch0bEgLYUbm73OQxPjrjbq4pw824u0I3LmvAVbcFXEndL2I4qPDq9yMRpX_3UAfCxKLCXY3EGTLkfao0_y16cDZeGAVk3-xL2y2moTUdEFFqZiilE4cwoLsy11lVlwlafpketruqhprgTHLxmkcis_cRIEVrfVbSw0-FSMVP9cHbQ1FAZjK6QYN5lM0iag3gLsHek_AE-l4L0UVozkGllksHEIB-JvkBxWhoIz8UJ_LBrmR86EKhfSXIll7VaGG0_4SWO95irDe4L9Ve9xcHL5I2GigWqYVcwkJZXQku6Zc8PAcSULqq-OnuMf7PFbRhvNlJpspaXj3eEGb0AIebPWMWEx7-fvcGAwVR4sRqtF6iWVMaEqH7jB_hh68M-x7iiJxBXD4_Cl17y5K0UziP0o105QYJMDJAILQNd3m72P7o2TvxILlHGCvS1QuZktf4ayl05eVw'; // <- сюда вставляем токен из smartapp-studio (https://developer.sberdevices.ru/docs/ru/developer_tools/sdk/overview)
     var initPhrase = 'запусти навык угадай песню'; // <- сюда вставляем активационную фразу для хапуска вашего canvas app
     //
 
@@ -356,35 +356,71 @@
         var ac = assistant.createAssistant({ getState: () => state });
     }
 
+    function encryptLine(t) {
+        var tEnc = '';
+        var replSymbol = true;
+        for (let i = 0; i < t.length; ++i) {
+                if (t[i] == '*') {
+                replSymbol = !replSymbol;
+            } else if (t[i] != ' ' && replSymbol) {
+                tEnc = tEnc+'🎄';
+             } else if (replSymbol) {
+                tEnc = tEnc+'  &nbsp;';
+             } else {
+                tEnc = tEnc+t[i];
+             }
+        }
+        return tEnc;
+
+    }
+
     //Разбираем пришедшие (от платформы) данные
     var processData = function(command){
         console.info('got command',command);
         document.getElementById('command').innerHTML = JSON.stringify(command);
-        // if (command.type == "smart_app_data"){
-        //     if (typeof command.action !== "undefined" && typeof command.action.type !== "undefined"){
-        //         let action = command.action;
-        //         document.getElementById('command').innerHTML = 'action: ' + JSON.stringify(action);
-        //         switch(action.type){
-        //             case 'START':
-        //                 //winNumber = command.action.winNumber;
-        //                 //document.getElementById('current-number').innerHTML = '';
-        //                 //document.querySelectorAll('li').forEach(item => item.className = '');
-        //                 break;
-        //                 // case 'SELECT_CAP':
-        //                 // select(action.select);
-        //                 // break;
-        //             case 'EXIT':
-        //                 console.log('Close smartapp');
-        //                 if (ac && typeof ac.close === "function"){
-        //                     ac.close();
-        //                 }
-        //                 break;
-        //             default:
-        //                 console.error('Unsupported action-type', action.type);
-        //                 break;
-        //         }
-        //     }
-        // }
+        if (command.type == "smart_app_data"){
+            if (typeof command.action !== "undefined" && typeof command.action.type !== "undefined"){
+                let action = command.action;
+                document.getElementById('command').innerHTML = 'action: ' + JSON.stringify(action);
+                switch(action.type){
+                    case 'SHOW_CATEGORIES':
+                        document.getElementById('container').style.display = "flex";
+                        document.getElementById('song').style.display = "none";
+                        break;
+                    case 'HIDE_CATEGORIES':
+                        document.getElementById('container').style.display = "none";
+                        document.getElementById('song').style.display = "block";
+                        break;
+                    case 'SHOW_LINE':
+                        var newLine = command.action.lineText;
+                        var newLineEncrypted = encryptLine(newLine);
+
+                        if (command.action.line == 0) {
+                            document.getElementById('songText').innerHTML = newLineEncrypted;
+                        } else {
+                            document.getElementById('songText').innerHTML = document.getElementById('songText').innerHTML + '<br/>' + newLineEncrypted;
+                        }
+                        break;
+                    case 'START':
+                        //winNumber = command.action.winNumber;
+                        //document.getElementById('current-number').innerHTML = '';
+                        //document.querySelectorAll('li').forEach(item => item.className = '');
+                        break;
+                        // case 'SELECT_CAP':
+                        // select(action.select);
+                        // break;
+                    case 'EXIT':
+                        console.log('Close smartapp');
+                        if (ac && typeof ac.close === "function"){
+                            ac.close();
+                        }
+                        break;
+                    default:
+                        console.error('Unsupported action-type', action.type);
+                        break;
+                }
+            }
+        }
     }
 
     //Отправляем данные на back
@@ -433,9 +469,9 @@
             document.getElementById('container').children[0].classList.add('onFocus');
             console.log(document.getElementById('container').children[0]);
             window.addEventListener('keydown', (event) => {
-                if (!winNumber){
-                    return;
-                }
+                //if (!winNumber){
+                //    return;
+                //}
                 let key = event.key.toLowerCase().replace(/^arrow/,'');
                 console.log('key event',key);
                 switch(key) {

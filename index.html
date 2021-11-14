@@ -93,7 +93,7 @@
     }
 
     .song {
-        font-size: 36px;
+        font-size: 5vw;
         color: rgb(36 178 62);
     }
 
@@ -217,7 +217,7 @@
     <div id="command">Debug: Тут выводится всё что приходит от платформы. Ожидаем данных...</div>
 
 
-    <div id="root">
+    <div id="root" hidden>
         <center>
             <div class="ehQSey hXQgjp" id="container">
                 <div class="hvJMgY" data-number="1">
@@ -248,16 +248,8 @@
 
 
     <center>
-        <div class="song" id="song" hidden>
+        <div class="song" id="song" >
             <p id="songText" class="songText">
-                В лесу родилась <b>ёлочка</b>,<br/>
-                В лесу она <b>росла</b>.<br/>
-                Зимой и <b>летом</b> стройная,<br/>
-                <b>Зелёная</b> была.<br/>
-                Метель ей <b>пела</b> песенку:<br/>
-                «Спи, ёлочка, <b>бай-бай</b>!»<br/>
-                <b>Мороз</b> снежком укутывал:<br/>
-                «Смотри, <b>не замерзай</b>!»<br/>
             </p>
         </div>
     </center>
@@ -353,6 +345,7 @@
         };
     }else{
         console.info('Start production version');
+        document.getElementById('command').style.display = "none";
         var ac = assistant.createAssistant({ getState: () => state });
     }
 

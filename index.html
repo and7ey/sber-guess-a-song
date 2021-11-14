@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sber graph canvas app example</title>
+    <title>Guess-a-song Canvas</title>
     <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
     <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
     <META HTTP-EQUIV="expires" content="Mon, 01 Jan 1990 00:00:00 GMT">
@@ -128,7 +128,7 @@
         /*box-sizing: border-box;*/
         flex-direction: row;
         flex-shrink: 0;
-        border-radius: 40px;
+        border-radius: 7vw;
         /*background: rgba(255, 255, 255, 0.06);*/
         /*box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 48px;*/
         will-change: background-color, transform;
@@ -138,7 +138,7 @@
 
 
     .hvJMgY {
-        margin: 20px;
+        margin: 2vw;
         position: relative;
         display: flex;
         overflow: hidden;
@@ -146,7 +146,7 @@
         flex-direction: column;
         box-sizing: content-box;
         width: 100%;
-        border-radius: 40px;
+        border-radius: 5vw;
     }
 
     .hRBsWH {
@@ -173,9 +173,9 @@
         justify-content: center;
         -webkit-box-align: center;
         align-items: center;
-        width: 64px;
-        height: 64px;
-        font-size: 28px;
+        width: 10vw;
+        height: 10vw;
+        font-size: 5vw;
         font-weight: 600;
         text-align: center;
         color: rgba(255, 255, 255, 0.56);
@@ -188,13 +188,13 @@
         display: flex;
         box-sizing: border-box;
         flex-direction: column;
-        height: 180px;
+        height: 10vw;
     }
 
     .jxgYyd {
         position: relative;
         box-sizing: border-box;
-        padding: 2vw;
+        padding: 1vw;
         background-color: rgb(36 178 62);
     }
 
@@ -205,7 +205,7 @@
         box-sizing: border-box;
         font-size: 2vw;
         font-weight: 500;
-        line-height: 40px;
+        /*line-height: 4vh;*/
         white-space: normal;
         color: rgb(255, 255, 255);
         -webkit-line-clamp: 2;
@@ -219,7 +219,7 @@
 
     <div id="root">
         <center>
-            <div tabindex="0" class="ehQSey hXQgjp" id="container">
+            <div class="ehQSey hXQgjp" id="container">
                 <div class="hvJMgY" data-number="1">
                     <div class="hRBsWH" style="background-image: url('001.jpeg'); opacity: 1;"></div>
                     <div color="index" class="hGDBie jYxGEJ">1</div>
@@ -429,6 +429,9 @@
                 action: {action_id: 'SELECT_CATEGORY', parameters: {select: number}}
             }
         console.log('Select',number,SendToBack);
+        document.getElementById('container').style.display = "none";
+        document.getElementById('song').style.display = "block";
+
         // run(number);
         var unsubscribe = ac.sendData(SendToBack, (data) => {
             unsubscribe();

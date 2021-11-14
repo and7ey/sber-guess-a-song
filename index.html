@@ -93,8 +93,8 @@
     }
 
     .song {
-        font-size: 5vw;
-        color: rgb(36 178 62);
+        font-size: 3vw;
+        color: rgb(9 46 16);
     }
 
 
@@ -115,7 +115,7 @@
     }
 
     .hvJMgY.onFocus {
-        border-color: #9ecd09;
+        /*border-color: #9ecd09;*/
         border: 10px solid #12A557;
     }
 
@@ -173,8 +173,8 @@
         justify-content: center;
         -webkit-box-align: center;
         align-items: center;
-        width: 10vw;
-        height: 10vw;
+        width: 7vw;
+        height: 7vw;
         font-size: 5vw;
         font-weight: 600;
         text-align: center;
@@ -217,7 +217,7 @@
     <div id="command">Debug: Тут выводится всё что приходит от платформы. Ожидаем данных...</div>
 
 
-    <div id="root" hidden>
+    <div id="root">
         <center>
             <div class="ehQSey hXQgjp" id="container">
                 <div class="hvJMgY" data-number="1">
@@ -248,7 +248,7 @@
 
 
     <center>
-        <div class="song" id="song" >
+        <div class="song" id="song" hidden>
             <p id="songText" class="songText">
             </p>
         </div>
@@ -262,7 +262,7 @@
 
     Необходимо вставить значения переменных token и initPhrase (они чуть ниже)
     */
-    var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGQ1MDgwMzU1ODQ3YzhkNmZjNGY3ZDVmOWMxMzRkOGYwNDAwNjEyZmJiZTQ3ZjEyNzU1ODAwODRjODhlZmM4NDY4ZDU4YzQ3OTU3ZmEzYyIsImF1ZCI6IlZQUyIsImV4cCI6MTYzNjgzNTU3NiwiaWF0IjoxNjM2NzQ5MTY2LCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiMGIwMmEwMmQtZjllMS00ZTY5LWEzOTEtYzI0YThlYTJlZWU4Iiwic2lkIjoiYjM3NDViNWYtOTYyZi00YWIzLWFiZmUtZGZiNzUxZTlhOGZlIn0.eLVVdsvtIGmbXirOaLvdE3dk5XQ2ow1lUSKTaGT3VkMUGozRKPKKnfqeU8dgjV2nplWrURIXGzPe4FXr0tIV9m8i7z6Vu4V3WVbSY9qJ-qyBQK--ZHVJZ_Knj48SPSlHrWlfxBoMeljSud_0Eoh1taKCP7stSEKfQQGBJxrtjv23iqbRzN7E9ECU7lsero_VzhUitdLH1kicQQU3nsxpU9eMECOIiuxAn92Ch0bEgLYUbm73OQxPjrjbq4pw824u0I3LmvAVbcFXEndL2I4qPDq9yMRpX_3UAfCxKLCXY3EGTLkfao0_y16cDZeGAVk3-xL2y2moTUdEFFqZiilE4cwoLsy11lVlwlafpketruqhprgTHLxmkcis_cRIEVrfVbSw0-FSMVP9cHbQ1FAZjK6QYN5lM0iag3gLsHek_AE-l4L0UVozkGllksHEIB-JvkBxWhoIz8UJ_LBrmR86EKhfSXIll7VaGG0_4SWO95irDe4L9Ve9xcHL5I2GigWqYVcwkJZXQku6Zc8PAcSULqq-OnuMf7PFbRhvNlJpspaXj3eEGb0AIebPWMWEx7-fvcGAwVR4sRqtF6iWVMaEqH7jB_hh68M-x7iiJxBXD4_Cl17y5K0UziP0o105QYJMDJAILQNd3m72P7o2TvxILlHGCvS1QuZktf4ayl05eVw'; // <- сюда вставляем токен из smartapp-studio (https://developer.sberdevices.ru/docs/ru/developer_tools/sdk/overview)
+    var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGQ1MDgwMzU1ODQ3YzhkNmZjNGY3ZDVmOWMxMzRkOGYwNDAwNjEyZmJiZTQ3ZjEyNzU1ODAwODRjODhlZmM4NDY4ZDU4YzQ3OTU3ZmEzYyIsImF1ZCI6IlZQUyIsImV4cCI6MTYzNjk5NzU0NiwiaWF0IjoxNjM2OTExMTM2LCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiMDY3NGNmODQtNWI4OC00NzEzLWIxNDAtYTQxMWQwN2QzYWQ1Iiwic2lkIjoiMGQxYjIxN2MtM2Q1Yy00NzViLTg1MzQtMzYwMDZmMDU0OTFjIn0.GSILopjkykA4MdxrCaod9oOraUmHGkgnpp7WJFxt5lKzGrepcyJNLTgND--VdJrgJT--qRlLNTMoKvtJQ8DP9q4C6W3Kaj_QgMwwcY2ipZIWnUN61qiuu5ScC_9G4O-SNKwvBUGexzzQwkfPlSKomNKBs99ZwDNZV41Lo4GGrQrtkSR4tn1fIh1foCC-mfp__duHfLst2-i7Nr2IkVBS_GKhw5h6a0zrV20d6fS7tYcP5F8qKLCKh3BedtHjY-sFY6hp1PfsF7UlQt2xB6IJDsg-4Mlu6u2IHZfrXNRdIKkXAyex-Vjs--NU9lTqu5SlKU55gLgx3g-PQHxELMTGNeXycB1CLAlpMyUndJDuuCxE61Txm3t0d1PXUfoiOdoadhSbz_nY1xHdnREp7FDtO7oRwkxsGPvS4sutzMx7qdI8hnr4ivzbwkjoM34mTk6bMJ4qvA1gOTvzkn4czZE-NlupCkM5U5k1xKKsFX7It45ALyNl6xjnfhFqO2BV-DmdUyrCJkyMsbY4ZjuFVarRYKdsmmm_N-Jg1eeybljCSUjr-aazu1QQF0YYj-nJq9Mr5oukKLM-2pa3hE8vRes3P_cnSmYDnF_LU--He8i_bRZEUI6dn3Q4K_WVhvAnRSJizaRNZ99uTDH_duGEz9HNnV6PWyMcagRWhYOTYljWyZg'; // <- сюда вставляем токен из smartapp-studio (https://developer.sberdevices.ru/docs/ru/developer_tools/sdk/overview)
     var initPhrase = 'запусти навык угадай песню'; // <- сюда вставляем активационную фразу для хапуска вашего canvas app
     //
 
@@ -356,7 +356,8 @@
                 if (t[i] == '*') {
                 replSymbol = !replSymbol;
             } else if (t[i] != ' ' && replSymbol) {
-                tEnc = tEnc+'🎄';
+                // tEnc = tEnc+'🎄';
+                tEnc = tEnc+'*';
              } else if (replSymbol) {
                 tEnc = tEnc+'  &nbsp;';
              } else {

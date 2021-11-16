@@ -93,6 +93,7 @@
     }
 
     .song {
+        margin-top: 5vh;
         font-size: 3vw;
         color: rgb(9 46 16);
     }
@@ -214,7 +215,7 @@
 </style>
 
 <body>
-    <div id="command">Debug: Тут выводится всё что приходит от платформы. Ожидаем данных...</div>
+    <div id="command" hidden>Debug: Тут выводится всё что приходит от платформы. Ожидаем данных...</div>
 
 
     <div id="root">
@@ -262,7 +263,7 @@
 
     Необходимо вставить значения переменных token и initPhrase (они чуть ниже)
     */
-    var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGQ1MDgwMzU1ODQ3YzhkNmZjNGY3ZDVmOWMxMzRkOGYwNDAwNjEyZmJiZTQ3ZjEyNzU1ODAwODRjODhlZmM4NDY4ZDU4YzQ3OTU3ZmEzYyIsImF1ZCI6IlZQUyIsImV4cCI6MTYzNjk5NzU0NiwiaWF0IjoxNjM2OTExMTM2LCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiMDY3NGNmODQtNWI4OC00NzEzLWIxNDAtYTQxMWQwN2QzYWQ1Iiwic2lkIjoiMGQxYjIxN2MtM2Q1Yy00NzViLTg1MzQtMzYwMDZmMDU0OTFjIn0.GSILopjkykA4MdxrCaod9oOraUmHGkgnpp7WJFxt5lKzGrepcyJNLTgND--VdJrgJT--qRlLNTMoKvtJQ8DP9q4C6W3Kaj_QgMwwcY2ipZIWnUN61qiuu5ScC_9G4O-SNKwvBUGexzzQwkfPlSKomNKBs99ZwDNZV41Lo4GGrQrtkSR4tn1fIh1foCC-mfp__duHfLst2-i7Nr2IkVBS_GKhw5h6a0zrV20d6fS7tYcP5F8qKLCKh3BedtHjY-sFY6hp1PfsF7UlQt2xB6IJDsg-4Mlu6u2IHZfrXNRdIKkXAyex-Vjs--NU9lTqu5SlKU55gLgx3g-PQHxELMTGNeXycB1CLAlpMyUndJDuuCxE61Txm3t0d1PXUfoiOdoadhSbz_nY1xHdnREp7FDtO7oRwkxsGPvS4sutzMx7qdI8hnr4ivzbwkjoM34mTk6bMJ4qvA1gOTvzkn4czZE-NlupCkM5U5k1xKKsFX7It45ALyNl6xjnfhFqO2BV-DmdUyrCJkyMsbY4ZjuFVarRYKdsmmm_N-Jg1eeybljCSUjr-aazu1QQF0YYj-nJq9Mr5oukKLM-2pa3hE8vRes3P_cnSmYDnF_LU--He8i_bRZEUI6dn3Q4K_WVhvAnRSJizaRNZ99uTDH_duGEz9HNnV6PWyMcagRWhYOTYljWyZg'; // <- сюда вставляем токен из smartapp-studio (https://developer.sberdevices.ru/docs/ru/developer_tools/sdk/overview)
+    var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOGQ1MDgwMzU1ODQ3YzhkNmZjNGY3ZDVmOWMxMzRkOGYwNDAwNjEyZmJiZTQ3ZjEyNzU1ODAwODRjODhlZmM4NDY4ZDU4YzQ3OTU3ZmEzYyIsImF1ZCI6IlZQUyIsImV4cCI6MTYzNzE3NjU4MCwiaWF0IjoxNjM3MDkwMTcwLCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiMGU2NDNkMzQtNDU0ZS00ZGQ2LTg5OGQtMjI2Y2FiOGQ1ZGNjIiwic2lkIjoiNWNjOTMyY2QtZjZjNC00MGI2LWE3N2MtNjdjMDNjN2VmOWJkIn0.tnPMH1Q2-12kBdUFUJkj1HNMBgtYrnQUJEICz7_hQf6Qwf_JCS-v26SRhhOhpf7W1dL85khBE9RNA7VY5of9RmiR16-wjjnUt1KvBWHhHxgR-sG90TcJt18LXW-v44e1hxzRq8tNw4xYwqhKG96Kws0bpvh5YCyRP9kHIoATgzKDydh_Ppc_Jz_j4vL-2elnJT9GWUZBkSqZh0i_BL5vLHSXb0ft_A36MKuBhlqGC59RlnrrEQidMueUDThIz8yL2Xq76LeGfZe_XlAhWD9Xk1Lqg5C0KZqV4cjA5E4neNPaZQBcXrD-3asWsl9gwPsOtZUWAZkCMdGUHLJTy-uH8kdaxVPzg5aaE1DuihngLNqBObH386xeqWkhG1PAun-oUKSho23uDChFVldOz69nnxovYOSdFPiGbCZxKc-f263ZZ6H4-JCw4Pnrpp1kozpXlJcC4hJWg-LKGq9UtIutCXs_CQOvjBqxb2JKORZYEVcuzyQlsT7UDrtKhL7QOZNCTeLH1CrdsaQTZAfc3r6M-pmIhPE9qFpf3z1t7V5zlerYjTsgl_bAJDsZ0XoVLkpBncqkoFhtPQyrMz1omQDt2LSr8ZXhyB8uKfUloXBS3PDPHNBn50sS-K8Uo12q4qVEcSfIIYl6odRfSx9x1oPtYE0S5RNS6KRG-Ob3fe_EUA8'; // <- сюда вставляем токен из smartapp-studio (https://developer.sberdevices.ru/docs/ru/developer_tools/sdk/overview)
     var initPhrase = 'запусти навык угадай песню'; // <- сюда вставляем активационную фразу для хапуска вашего canvas app
     //
 
@@ -337,15 +338,16 @@
     const url = new URL(window.location.href);
     if (url.searchParams.get('devel') === 'true'){
         console.info('Start devel version');
+        document.getElementById('command').style.display = "block";
         var ac = assistant.createSmartappDebugger({ getState: () => state, token, initPhrase });
     }else if (url.searchParams.get('devel') === 'local'){
         var ac = {
             on: function(){},
             sendData: function(data){console.log('skip send data',data);}
         };
+        document.getElementById('command').style.display = "block";
     }else{
         console.info('Start production version');
-        document.getElementById('command').style.display = "none";
         var ac = assistant.createAssistant({ getState: () => state });
     }
 
@@ -353,13 +355,15 @@
         var tEnc = '';
         var replSymbol = true;
         for (let i = 0; i < t.length; ++i) {
-                if (t[i] == '*') {
+            if (t[i] == '*') {
                 replSymbol = !replSymbol;
+            } else if (',."-!?«»'.indexOf(t[i]) > -1) {
+                tEnc = tEnc+t[i];
             } else if (t[i] != ' ' && replSymbol) {
                 // tEnc = tEnc+'🎄';
                 tEnc = tEnc+'*';
              } else if (replSymbol) {
-                tEnc = tEnc+'  &nbsp;';
+                tEnc = tEnc+' ';
              } else {
                 tEnc = tEnc+t[i];
              }
@@ -378,31 +382,39 @@
                 document.getElementById('command').innerHTML = 'action: ' + JSON.stringify(action);
                 switch(action.type){
                     case 'SHOW_CATEGORIES':
+                        console.log('SHOW_CATEGORIES');
                         document.getElementById('container').style.display = "flex";
                         document.getElementById('song').style.display = "none";
                         break;
+
                     case 'HIDE_CATEGORIES':
+                        console.log('HIDE_CATEGORIES');
                         document.getElementById('container').style.display = "none";
                         document.getElementById('song').style.display = "block";
                         break;
+
                     case 'SHOW_LINE':
+                        console.log('SHOW_LINE');
                         var newLine = command.action.lineText;
                         var newLineEncrypted = encryptLine(newLine);
 
                         if (command.action.line == 0) {
-                            document.getElementById('songText').innerHTML = newLineEncrypted;
+                            setTimeout(function () {
+                                console.log('show first line');
+                                document.getElementById('songText').innerHTML = newLineEncrypted;
+                            }, 5000);
                         } else {
-                            document.getElementById('songText').innerHTML = document.getElementById('songText').innerHTML + '<br/>' + newLineEncrypted;
+                            document.getElementById('songText').innerHTML = document.getElementById('songText').innerHTML + '<br>' + newLineEncrypted;
                         }
                         break;
-                    case 'START':
-                        //winNumber = command.action.winNumber;
-                        //document.getElementById('current-number').innerHTML = '';
-                        //document.querySelectorAll('li').forEach(item => item.className = '');
+
+                    case 'RIGHT_ANSWER':
+                        console.log('RIGHT_ANSWER');
+                        var songLines = command.action.song;
+                        var songLinesEnc = document.getElementById('songText').innerHTML;
+                        showDecrTextSimple(songLinesEnc, songLines);
                         break;
-                        // case 'SELECT_CAP':
-                        // select(action.select);
-                        // break;
+
                     case 'EXIT':
                         console.log('Close smartapp');
                         if (ac && typeof ac.close === "function"){
@@ -415,6 +427,31 @@
                 }
             }
         }
+    }
+
+    function showDecrTextSimple(encText, decrText) {
+        var decrTextCopy = decrText.replaceAll('*', '').replaceAll('\n', '<br>');
+        document.getElementById('songText').innerHTML = decrTextCopy.substring(0, encText.length);
+    }
+
+    function showDecrText(encText, decrText) {
+        var decrTextCopy = decrText.replaceAll('*', '').replaceAll('\n', '<br>');
+
+        function showText(i) {
+            var text = decrTextCopy.substring(0, i+1) + encText.substring(i+1);
+            document.getElementById('songText').innerHTML = text;
+        }
+
+        for( var i=0; i < encText.length; i++ ) {
+            if (encText[i] !== '*') {
+                setTimeout( showText, i*100, i );
+            }
+        }
+        // show new word once answer (=song text) is shown
+        // setTimeout( function() {
+        //     document.getElementById('songText').innerHTML = newLine;
+        // }, encText.length*100+1000 );
+
     }
 
     //Отправляем данные на back

@@ -400,10 +400,10 @@
                         var newLineEncrypted = encryptLine(newLine);
 
                         if (command.action.line == 0) {
-                            setTimeout(function () {
+                            //setTimeout(function () {
                                 console.log('show first line');
                                 document.getElementById('songText').innerHTML = newLineEncrypted;
-                            }, 2000);
+                            //}, 2000);
                         } else {
                             document.getElementById('songText').innerHTML = document.getElementById('songText').innerHTML + '<br>' + newLineEncrypted;
                         }

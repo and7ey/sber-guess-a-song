@@ -444,6 +444,7 @@
 
         // run(number);
         var unsubscribe = ac.sendData(SendToBack, (data) => {
+            processData(data);
             unsubscribe();
         });
     }

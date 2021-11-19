@@ -441,12 +441,13 @@
         console.log('Select',number,SendToBack);
         document.getElementById('container').style.display = "none";
         document.getElementById('song').style.display = "block";
-
+ 
+        ac.sendData(SendToBack);
         // run(number);
-        var unsubscribe = ac.sendData(SendToBack, (data) => {
-            processData(data);
-            unsubscribe();
-        });
+        //var unsubscribe = ac.sendData(SendToBack, (data) => {
+        //    processData(data);
+        //    unsubscribe();
+        //});
     }
 
     //Принимаем начальные данные от платформы

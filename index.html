@@ -443,9 +443,9 @@
         //document.getElementById('song').style.display = "block";
 
         // run(number);
-        // var unsubscribe = ac.sendData(SendToBack, (data) => {
-        //    unsubscribe();
-        //});
+        var unsubscribe = ac.sendData(SendToBack, (data) => {
+            unsubscribe();
+        });
     }
 
     //Принимаем начальные данные от платформы
@@ -460,6 +460,7 @@
 
     //Принимаем данные от платформы
     ac.on('data', (command) => {
+        console.log(command);
         processData(command);
     });
 

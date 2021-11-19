@@ -216,7 +216,7 @@
 </style>
 
 <body>
-    <div id="command">Debug: Тут выводится всё что приходит от платформы. Ожидаем данных...</div>
+    <div id="command" hidden>Debug: Тут выводится всё что приходит от платформы. Ожидаем данных...</div>
 
 
     <div id="root">
@@ -439,8 +439,8 @@
                 action: {action_id: 'SELECT_CATEGORY', parameters: {select: number}}
             }
         console.log('Select',number,SendToBack);
-        //document.getElementById('container').style.display = "none";
-        //document.getElementById('song').style.display = "block";
+        document.getElementById('container').style.display = "none";
+        document.getElementById('song').style.display = "block";
 
         // run(number);
         var unsubscribe = ac.sendData(SendToBack, (data) => {

@@ -7,6 +7,7 @@
     <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
     <META HTTP-EQUIV="expires" content="Mon, 01 Jan 1990 00:00:00 GMT">
     <META HTTP-EQUIV="Content-language" CONTENT="ru">
+    <META NAME="author" CONTENT="@WaxerDima @VirusNet">
 
     <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
@@ -101,8 +102,8 @@
 
 
     div#command{
-        width: 90vw;
-        /*overflow: auto;*/
+        width: 200vw;
+        overflow: scroll;
         margin: 20px;
         padding: 10px;
         border: 1px solid red;
@@ -112,7 +113,7 @@
 
     .hXQgjp {
         box-sizing: border-box;
-        width: 90vw;
+        /* width: 90vw; */
     }
 
     .hvJMgY.onFocus {
@@ -126,6 +127,7 @@
         margin-left:10px;*/
         position: relative;
         display: flex;
+        /* width: 1920px; */
         /*box-sizing: border-box;*/
         flex-direction: row;
         flex-shrink: 0;
@@ -139,11 +141,12 @@
 
 
     .hvJMgY {
+        height: 70vh;
         margin: 2vw;
         position: relative;
         display: flex;
         overflow: hidden;
-        flex: 1 1 0%;
+        /* flex: 1 1 0%; */
         flex-direction: column;
         box-sizing: content-box;
         width: 100%;
@@ -155,10 +158,24 @@
         display: block;
         box-sizing: border-box;
         width: 100%;
-        height: 30vw;
+        /* height: 30vw; */
+        height: 100%;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
+    }
+
+    @media (max-width: 800px) {
+        .hvJMgY{
+            width: 80vw;
+            flex-shrink: 0;
+        }
+        .hRBsWH {
+            height: 100%;
+        }
+        .ehQSey{
+            margin-top: 30px;
+        }
     }
 
     .jYxGEJ {
@@ -189,13 +206,13 @@
         display: flex;
         box-sizing: border-box;
         flex-direction: column;
-        height: 10vw;
+        height: 12vh;
     }
 
     .jxgYyd {
         position: relative;
         box-sizing: border-box;
-        padding: 1vw;
+        padding: 1.5vh;
         background-color: rgb(36 178 62);
     }
 
@@ -204,7 +221,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         box-sizing: border-box;
-        font-size: 2vw;
+        font-size: 3vh;
         font-weight: 500;
         /*line-height: 4vh;*/
         white-space: normal;
@@ -212,20 +229,6 @@
         -webkit-line-clamp: 2;
     }
 
-    @media (max-width: 800px) {
-        .hvJMgY{
-            width: 80vw;
-            flex-shrink: 0;
-        }
-        .hRBsWH {
-            height: 100%;
-        }
-        .ehQSey{
-            margin-top: 30px;
-        }
-    }
-    
-    
 </style>
 
 <body>

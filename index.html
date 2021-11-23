@@ -457,14 +457,14 @@
         document.getElementById('container').style.display = "none";
         document.getElementById('song').style.display = "block";
  
-        // ac.sendData(SendToBack);
+        ac.sendData(SendToBack);
         
-        var unsubscribe = ac.sendData(SendToBack, (data) => {
-            processData(data);
-            console.info('got senddata reply');
-            console.info(data);
-            unsubscribe();
-        });
+        //var unsubscribe = ac.sendData(SendToBack, (data) => {
+        //    processData(data);
+        //    console.info('got senddata reply');
+        //    console.info(data);
+        //    unsubscribe();
+        //});
     }
 
     //Принимаем начальные данные от платформы
